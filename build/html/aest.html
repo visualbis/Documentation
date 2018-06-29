@@ -1,0 +1,1045 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="EN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="EN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Column Bar Chart &mdash; VBXUserGuideRevamp 2.4 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> VBXUserGuideRevamp
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Advanced Column Bar Chart</a><ul>
+<li><a class="reference internal" href="#data-source-requirements-for-a-advanced-column-bar-chart">Data Source Requirements for a Advanced Column / Bar Chart</a></li>
+<li><a class="reference internal" href="#how-to-use-the-advanced-column-bar-chart">How to use the Advanced Column / Bar Chart?</a></li>
+<li><a class="reference internal" href="#chart-type-selections-for-advanced-column-bar-chart">Chart Type Selections for Advanced Column Bar Chart</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-properties-of-the-trend-charts">Additional Properties of the Trend Charts</a><ul>
+<li><a class="reference internal" href="#category-data">Category Data</a></li>
+<li><a class="reference internal" href="#category-appearance">Category Appearance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scripting-in-trend-and-comparison-charts">Scripting in Trend and Comparison Charts</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VBXUserGuideRevamp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced Column Bar Chart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aest.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-column-bar-chart">
+<h1>Advanced Column Bar Chart<a class="headerlink" href="#advanced-column-bar-chart" title="Permalink to this headline">¶</a></h1>
+<p>Advanced Column Bar Chart offers an intuitive way to compare any two
+measures. In addition to comparing two measures, it also adds a
+spotlight to the variance between these measures in terms of absolute
+and percentage values. Negative or Positive variance is automatically
+categorized as two series. This removes the need to add conditional
+formatting to highlight the quality of variance.</p>
+<p>Figure .: Sample Advanced Column Bar Chart</p>
+<div class="section" id="data-source-requirements-for-a-advanced-column-bar-chart">
+<h2>Data Source Requirements for a Advanced Column / Bar Chart<a class="headerlink" href="#data-source-requirements-for-a-advanced-column-bar-chart" title="Permalink to this headline">¶</a></h2>
+<p>The minimum data source requirement for a Advanced Column / Bar Chart
+are at least one dimension and two measures to form a minimum of two
+Data Series where the Chart can be configured only for two series. In
+case the data source does contain additional dimension or additional
+measures, you can leverage the Data Utility tool to specify which
+information is to be used by the Advanced Column / Bar Chart.</p>
+</div>
+<div class="section" id="how-to-use-the-advanced-column-bar-chart">
+<h2>How to use the Advanced Column / Bar Chart?<a class="headerlink" href="#how-to-use-the-advanced-column-bar-chart" title="Permalink to this headline">¶</a></h2>
+<p>In the following steps we will outline how you can setup a new Advanced
+Column Bar Chart as part of your next SAP BusinessObjects Design
+Studio/SAP Lumira Designer project.</p>
+<p>You can follow the steps below to configure the Advanced Column / Bar
+Chart:</p>
+<ol class="arabic simple">
+<li>Create a new project in SAP BusinessObjects Design Studio/SAP Lumira
+Designer.</li>
+<li>Add a data source to the project. For our example we will assume that
+our data source shows the measures Order Cost, Order Amount and Order
+Quantity along a set of members of dimension Item Category.</li>
+<li>Add a Advanced Column / Bar Chart from the VBX Charts to your SAP
+BusinessObjects Design Studio/SAP Lumira Designer project.</li>
+<li>Assign the data source to the Advanced Column / Bar Chart.</li>
+<li>Navigate to the Additional Properties of the Advanced Column / Bar
+Chart.</li>
+<li>In case the Additional Properties are not shown, please use the menu
+View <strong>•</strong> Additional Properties to activate the display of the
+Additional Properties.</li>
+<li>In the Additional Properties navigate to the category Data and to the
+sub category Data Series (see Figure 4.140).</li>
+</ol>
+<p>Figure .: Category Data – Series Options</p>
+<ol class="arabic simple" start="8">
+<li>In the area Series Options, you can change the color for the series.
+For our example, set the Series Order Cost to the color Orange.</li>
+<li>Set the Series Order Amount to the color Blue.</li>
+<li>Since the Chart considers only the first two data series in the
+Columns of the Initial View you will be able to set the colors for
+the first two data series Order Cost and Order Amount.</li>
+<li>By default, the Series Positive and Negative will have Green and Red
+colors. You can also change their colors based on your choice.</li>
+<li>Now navigate to the area Series Name Change (see Figure 4.141)</li>
+</ol>
+<p>Figure .: Category Data – Series Name Change</p>
+<ol class="arabic simple" start="13">
+<li>Set the Series Order Cost to the name Order Cost.</li>
+<li>Set the Series Order Amount to the name Order Amount.</li>
+<li>Set the property ∆PY to the name Var (restricted to 5 characters).</li>
+<li>Set the property ∆PY% to the name Var% (restricted to 5 characters).</li>
+<li>Now navigate to the area Shape Options (see Figure 4.142).</li>
+</ol>
+<p>Figure .: Category Data – Shape Options</p>
+<ol class="arabic simple" start="18">
+<li>Set the property Deviation Shape to the option Square. The other
+options are Diamond and Circle.</li>
+<li>Set the property Deviation Shape Color to the color Black.</li>
+<li>Navigate to the category Appearance and to the subcategory Chart
+(see Figure 4.143).</li>
+</ol>
+<p>Figure .: Category Appearance</p>
+<ol class="arabic simple" start="21">
+<li>Set the property Set the Chart Type to the option Column.</li>
+<li>Based on the above configuration, you will be able to view the
+Advanced Column Bar Chart (see Figure 4.144). Here you can observe
+that there are three layers where the bottom layer 1 represents the
+Column Bar Chart for the first two data series Order Cost and Order
+Amount against the dimension Item Category. In this case, you can
+observe that the column bar chart gets displayed based on the
+comparison of the two data series taken as measures. Also, the data
+label gets displayed for the data series having higher value. The
+middle layer 2 shows the vertical column bars representing the
+Variance value for the first two data series Order Cost and Order
+Amount calculated as Series 2 value (Order Amount) – Series 1 value
+(Order Cost). The positive variance value will be denoted in green
+color vertical bars and the negative variance value will be denoted
+in red color vertical bars (see Figure 4.144). The top layer 3 shows
+the thin vertical column bars with deviation shapes at its top. Here
+the Variance % value for the first two data series Order Cost and
+Order Amount is calculated as Series 2 value (Order Amount) – Series
+1 value (Order Cost) /Series 1 value (Order Cost) X 100. The
+positive variance percentage value will be denoted in green color
+vertical bars and the negative variance percentage value will be
+denoted in red color vertical bars (see Figure 4.144).</li>
+</ol>
+<p>Figure .: Advanced Column Bar Chart</p>
+</div>
+<div class="section" id="chart-type-selections-for-advanced-column-bar-chart">
+<h2>Chart Type Selections for Advanced Column Bar Chart<a class="headerlink" href="#chart-type-selections-for-advanced-column-bar-chart" title="Permalink to this headline">¶</a></h2>
+<p>In the additional properties of the Advanced Column Bar Chart in the
+category Appearance and the subcategory Chart, you have different Chart
+Type options that can be configured for the Advanced Column Bar Chart.
+The options are Column, Column-Pin, Column-Stacked, Column-Deviation,
+Bar, Bar-Pin, Bar-Stacked, Bar-Deviation and Line.</p>
+<p>For our first example, set the property Set the Chart Type to the option
+Column-Pin (see Figure 4.145).</p>
+<p>Figure .: Category Appearance</p>
+<p>Based on the above configuration, you will be able to view the Advanced
+Column Bar Chart configured as Column-Pin chart type (see Figure 4.146).
+You can observe that bottom layer is configured with Column-Pin chart
+type having the Primary Measure as Order Cost and Secondary Measure as
+Order Amount.</p>
+<p>Figure .: Column-Pin Chart Type</p>
+<p>Here you can also change the Primary and Secondary Measure shapes for
+the Column Pin chart type by navigating to the category Data and to the
+subcategory Data Series (see Figure 4.147).</p>
+<p>Figure .: Category Data – Shape Options</p>
+<p>For our second example, navigate to the category Appearance and to the
+subcategory Chart and set the property Set the Chart Type to the option
+Column-Deviation (see Figure 4.148).</p>
+<p>Figure .: Category Appearance</p>
+<p>Based on the above configuration, you will be able to view the Advanced
+Column Bar Chart configured as Column-Deviation chart type (see Figure
+4.149). You can observe that bottom layer is configured with
+Column-Deviation chart type. Here the secondary measure Order Amount is
+viewed as Column Bar Charts and the primary measure Order Cost will be
+represented as the positive deviation bar in green color that occurs
+inside the Column Bar Chart and the negative deviation bar in red color
+that occurs on the top of the Column Bar Chart. You can also configure
+with different chart types to view the Advanced Column Bar Chart.</p>
+<p>Figure .: Column-Deviation Chart Type</p>
+</div>
+</div>
+<div class="section" id="additional-properties-of-the-trend-charts">
+<h1>Additional Properties of the Trend Charts<a class="headerlink" href="#additional-properties-of-the-trend-charts" title="Permalink to this headline">¶</a></h1>
+<p>In section 4.5.5 we discussed the common set of Additional Properties
+for all charts. In this section we will outline the Additional
+Properties that are specific to the Trend and Comparison charts.</p>
+<div class="section" id="category-data">
+<h2>Category Data<a class="headerlink" href="#category-data" title="Permalink to this headline">¶</a></h2>
+<p>The category Data in the Additional Properties allows you to customize
+settings in regard to topics such as Data Labels, Error Bar, Markers,
+and other data relevant configurations.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sub category</th>
+<th class="head">Area</th>
+<th class="head">Property</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Data Series</td>
+<td>Marker</td>
+<td>Apply Marker
+Customization</td>
+<td>This property
+allows you to
+enable /
+disable the
+Marker
+Customization
+for the Chart.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Marker Color
+identical to
+Data Series</td>
+<td>This property
+sets the same
+color to the
+Markers as the
+Data Series</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Marker Symbol</td>
+<td>Enables you to
+choose a Marker
+Symbol. The
+available types
+of symbols are
+Circle,
+Diamond,
+Square,
+Triangle,
+Triangle Down
+and Custom
+Marker.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Marker Size</td>
+<td>Allows you to
+set a size for
+the marker.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Marker Color</td>
+<td>Allows you to
+choose a color
+for the marker.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Show On Hover</td>
+<td>Allows you to
+enable the
+hover option on
+the marker.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Series Options</td>
+<td>Positive</td>
+<td>This property
+allows you to
+select the
+color for the
+data series
+which
+represents the
+positive
+variance value.
+By default the
+color will be
+green. This
+property is
+applicable for
+Advanced Column
+Bar Chart.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Negative</td>
+<td>This property
+allows you to
+select the
+color for the
+data series
+which
+represents the
+neagative
+variance value.
+By default the
+color will be
+red. This
+property is
+applicable for
+Advanced Column
+Bar Chart.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Series Name
+Change</td>
+<td>∆PY</td>
+<td>This property
+allows you to
+change the
+Series Name for
+the Variance
+value and it is
+restricted to
+five letters.
+This property
+is applicable
+for Advanced
+Column Bar
+Chart.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>∆PY%</td>
+<td>This property
+allows you to
+change the
+Series Name for
+the Variance
+Percentage
+value and it is
+restricted to
+five letters.
+This property
+is applicable
+for Advanced
+Column Bar
+Chart.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Shape Options</td>
+<td>Deviation Shape</td>
+<td>This property
+allows you to
+set the
+Deviation shape
+on the top of
+the thin
+vertical bars
+in the top most
+layer
+representing
+the Variance
+Percentage
+value. The
+options are
+Square, Circle
+and Diamond.
+This property
+is applicable
+for Advanced
+Column Bar
+Chart.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Deviation Shape
+Color</td>
+<td>This property
+allows you to
+set the color
+for the
+Deviation
+Shape. This
+property is
+applicable for
+Advanced Column
+Bar Chart.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Primary Measure
+Shape</td>
+<td>This property
+allows you to
+set the shape
+for the Primary
+Measure when
+the chart type
+is selected as
+Column-Pin or
+Bar-Pin. The
+options are
+Square, Circle
+and Diamond.
+This property
+is applicable
+for Advanced
+Column Bar
+Chart.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Secondary
+Measure Shape</td>
+<td>This property
+allows you to
+set the shape
+for the
+Secondary
+Measure when
+the chart type
+is selected as
+Column-Pin or
+Bar-Pin. The
+options are
+Square, Circle
+and Diamond.
+This property
+is applicable
+for Advanced
+Column Bar
+Chart.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Number of
+Decimals</td>
+<td>This property
+allows you to
+set the number
+of decimals for
+the Varaiance
+Series. This
+property is
+applicable for
+Advanced Column
+Bar Chart.</td>
+</tr>
+<tr class="row-odd"><td>Drill Down</td>
+<td>General
+Settings</td>
+<td>Show all
+Measures</td>
+<td>You can use
+this property
+to enable /
+disable the
+showing of all
+measures in a
+Drilldown. In
+case this
+option is
+disabled, then
+the drill down
+will only show
+the measure
+that was
+clicked.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Show Totals</td>
+<td>This property
+allows you to
+show / hide
+totals for the
+chart itself.
+The totals will
+only be shown
+on the first
+view of the
+charts, but
+will not be
+shown on the
+next drill down
+levels.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Total Node
+Placement</td>
+<td>This property
+allows you to
+decide if the
+Total node
+should be
+placed before
+or after the
+members of the
+drill down.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Show Parent
+Nodes on
+Drilldown</td>
+<td>In case this
+property is
+activated, then
+the parent node
+will be
+included in the
+Drill Down
+chart in
+addition to the
+members from
+the next level.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Parent Node
+Placement</td>
+<td>This property
+allows you to
+decide if the
+parent node
+totals should
+be placed
+before or after
+the members of
+the drill down.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Enable Scroll
+Bar</td>
+<td>This option
+allows you to
+enable /
+disable the
+scroll bar.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Scrollable
+Chart
+Width/Height</td>
+<td>Sets the
+Width/Height of
+the Chart
+greater than
+the Container
+Width/Height.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>On Click</td>
+<td>Using the On
+Click property
+you can specify
+which
+functionality
+should be used
+when you click
+on an element
+of the data
+series in the
+chart. The
+available
+options are:
+Drilldown,
+Expand /
+Collapse,
+Select, None.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>On Double Click</td>
+<td>Using the On
+Double-Click
+property you
+can specify
+which
+functionality
+should be used
+when you
+double-click on
+an element of
+the data series
+in the chart.
+The available
+options are:
+Drilldown,
+Expand /
+Collapse,
+Select, None.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>On CTRL</td>
+<td>Using the On
+CTRL-Click
+property you
+can specify
+which
+functionality
+should be used
+when you press
+the CTRL Key
+and clicks on
+an element of
+the data series
+in the chart.
+The available
+options are:
+Drilldown,
+Expand /
+Collapse,
+Select, None.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Hierarchy Drill
+Down</td>
+<td>Enable
+Hierarchy Drill
+Down</td>
+<td>This option
+allows you to
+enable /
+disable a Drill
+Down based on
+an active
+hierarchy in
+the data
+source.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Include Root
+Level Nodes</td>
+<td>Using this
+property you
+can include or
+exclude the
+root level
+nodes of an
+active
+hierarchy into
+the Drill Down
+chart. This
+option only
+impacts Drill
+Down charts
+using a
+hierarchy.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Max. no. of
+Hierarchy
+Levels</td>
+<td>Using this
+option you can
+define a
+maximum for a
+Drilldown chart
+using
+hierarchies. By
+specifying the
+maximum number
+of hierarchy
+levels you can
+limit the data
+volume, which
+you will be
+able to
+retrieve using
+the drilldown
+chart.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Activate
+Hierarchical
+Labeling</td>
+<td>Using this
+property you
+can activate a
+specific
+labeling which
+will visualize
+the
+hierarchical
+nature of the
+data and keep
+the labels on
+the X-Axis (for
+example with a
+column chart)
+grouped
+together based
+on the drill
+down.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4.12: Data</p>
+</div>
+<div class="section" id="category-appearance">
+<h2>Category Appearance<a class="headerlink" href="#category-appearance" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sub category</th>
+<th class="head">Area</th>
+<th class="head">Property</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Chart</td>
+<td>General
+Settings</td>
+<td>Set the Chart
+Type</td>
+<td>This property
+allows you to
+set the Chart
+Type for the
+Advanced Column
+Bar Chart. The
+options are
+Column,
+Column-Pin,
+Column-Stacked,
+Column-Deviatio
+n,
+Bar, Bar-Pin,
+Bar-Stacked,
+Bar-Deviation
+and Line. This
+property is
+applicable for
+Advanced Column
+Bar Chart.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Enable Pareto
+Series</td>
+<td>This property
+sets the Pareto
+Series in the
+Column Bar
+Chart to
+display both
+Column bars and
+a Line where
+individual
+values are
+represented in
+descending
+order by column
+bars, and the
+cumulative
+total is
+represented by
+the line.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Drill Down</td>
+<td>Drill Down Data
+Label Cursor</td>
+<td>This property
+sets the type
+of the cursor.
+The options are
+Default,
+Pointer,
+Crosshair and
+Cell.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Drill Down
+Button
+Horizontal
+Alignment</td>
+<td>This property
+allows to
+configure the
+horizontal
+alignment of
+the Drilldown
+button.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Drill Down
+Button Vertical
+Alignment</td>
+<td>This property
+allows to
+configure the
+vertical
+alignment of
+the Drilldown
+button.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Drilldown
+button
+Horizontal
+Offset</td>
+<td>This property
+allows to
+specify the
+Horizontal
+Offset of the
+Drilldown
+button relative
+to its default
+alignment.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Drilldown
+button Vertical
+Offset</td>
+<td>This property
+allows to
+specify the
+Vertical Offset
+of the
+Drilldown
+button relative
+to its default
+alignment.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4.13: Appearance</p>
+</div>
+</div>
+<div class="section" id="scripting-in-trend-and-comparison-charts">
+<h1>Scripting in Trend and Comparison Charts<a class="headerlink" href="#scripting-in-trend-and-comparison-charts" title="Permalink to this headline">¶</a></h1>
+<p>In addition to the common scripting functions listed in section 4.6, the
+Trend charts support the following scripting functions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function / Method</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DSXGetchartWidth()</td>
+<td>The function allows you to
+retrieve the value for the width
+of the Column Bar Drill Down
+Chart.</td>
+</tr>
+<tr class="row-odd"><td>DSXSetchartWidth()</td>
+<td>The function allows you to set
+the value for the width of the
+Column Bar Drill Down Chart.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4.14: Scripting Functions</p>
+<ul class="simple">
+<li></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dinesh RVL.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.4',
+            LANGUAGE:'EN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

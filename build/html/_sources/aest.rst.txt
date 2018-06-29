@@ -1,0 +1,684 @@
+Advanced Column Bar Chart
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Advanced Column Bar Chart offers an intuitive way to compare any two
+measures. In addition to comparing two measures, it also adds a
+spotlight to the variance between these measures in terms of absolute
+and percentage values. Negative or Positive variance is automatically
+categorized as two series. This removes the need to add conditional
+formatting to highlight the quality of variance.
+
+Figure .: Sample Advanced Column Bar Chart
+
+Data Source Requirements for a Advanced Column / Bar Chart 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The minimum data source requirement for a Advanced Column / Bar Chart
+are at least one dimension and two measures to form a minimum of two
+Data Series where the Chart can be configured only for two series. In
+case the data source does contain additional dimension or additional
+measures, you can leverage the Data Utility tool to specify which
+information is to be used by the Advanced Column / Bar Chart.
+
+How to use the Advanced Column / Bar Chart? 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the following steps we will outline how you can setup a new Advanced
+Column Bar Chart as part of your next SAP BusinessObjects Design
+Studio/SAP Lumira Designer project.
+
+You can follow the steps below to configure the Advanced Column / Bar
+Chart:
+
+1. Create a new project in SAP BusinessObjects Design Studio/SAP Lumira
+   Designer.
+
+2. Add a data source to the project. For our example we will assume that
+   our data source shows the measures Order Cost, Order Amount and Order
+   Quantity along a set of members of dimension Item Category.
+
+3. Add a Advanced Column / Bar Chart from the VBX Charts to your SAP
+   BusinessObjects Design Studio/SAP Lumira Designer project.
+
+4. Assign the data source to the Advanced Column / Bar Chart.
+
+5. Navigate to the Additional Properties of the Advanced Column / Bar
+   Chart.
+
+6. In case the Additional Properties are not shown, please use the menu
+   View **•** Additional Properties to activate the display of the
+   Additional Properties.
+
+7. In the Additional Properties navigate to the category Data and to the
+   sub category Data Series (see Figure 4.140).
+
+Figure .: Category Data – Series Options
+
+8.  In the area Series Options, you can change the color for the series.
+    For our example, set the Series Order Cost to the color Orange.
+
+9.  Set the Series Order Amount to the color Blue.
+
+10. Since the Chart considers only the first two data series in the
+    Columns of the Initial View you will be able to set the colors for
+    the first two data series Order Cost and Order Amount.
+
+11. By default, the Series Positive and Negative will have Green and Red
+    colors. You can also change their colors based on your choice.
+
+12. Now navigate to the area Series Name Change (see Figure 4.141)
+
+Figure .: Category Data – Series Name Change
+
+13. Set the Series Order Cost to the name Order Cost.
+
+14. Set the Series Order Amount to the name Order Amount.
+
+15. Set the property ∆PY to the name Var (restricted to 5 characters).
+
+16. Set the property ∆PY% to the name Var% (restricted to 5 characters).
+
+17. Now navigate to the area Shape Options (see Figure 4.142).
+
+Figure .: Category Data – Shape Options
+
+18. Set the property Deviation Shape to the option Square. The other
+    options are Diamond and Circle.
+
+19. Set the property Deviation Shape Color to the color Black.
+
+20. Navigate to the category Appearance and to the subcategory Chart
+    (see Figure 4.143).
+
+Figure .: Category Appearance
+
+21. Set the property Set the Chart Type to the option Column.
+
+22. Based on the above configuration, you will be able to view the
+    Advanced Column Bar Chart (see Figure 4.144). Here you can observe
+    that there are three layers where the bottom layer 1 represents the
+    Column Bar Chart for the first two data series Order Cost and Order
+    Amount against the dimension Item Category. In this case, you can
+    observe that the column bar chart gets displayed based on the
+    comparison of the two data series taken as measures. Also, the data
+    label gets displayed for the data series having higher value. The
+    middle layer 2 shows the vertical column bars representing the
+    Variance value for the first two data series Order Cost and Order
+    Amount calculated as Series 2 value (Order Amount) – Series 1 value
+    (Order Cost). The positive variance value will be denoted in green
+    color vertical bars and the negative variance value will be denoted
+    in red color vertical bars (see Figure 4.144). The top layer 3 shows
+    the thin vertical column bars with deviation shapes at its top. Here
+    the Variance % value for the first two data series Order Cost and
+    Order Amount is calculated as Series 2 value (Order Amount) – Series
+    1 value (Order Cost) /Series 1 value (Order Cost) X 100. The
+    positive variance percentage value will be denoted in green color
+    vertical bars and the negative variance percentage value will be
+    denoted in red color vertical bars (see Figure 4.144).
+
+Figure .: Advanced Column Bar Chart
+
+Chart Type Selections for Advanced Column Bar Chart
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the additional properties of the Advanced Column Bar Chart in the
+category Appearance and the subcategory Chart, you have different Chart
+Type options that can be configured for the Advanced Column Bar Chart.
+The options are Column, Column-Pin, Column-Stacked, Column-Deviation,
+Bar, Bar-Pin, Bar-Stacked, Bar-Deviation and Line.
+
+For our first example, set the property Set the Chart Type to the option
+Column-Pin (see Figure 4.145).
+
+Figure .: Category Appearance
+
+Based on the above configuration, you will be able to view the Advanced
+Column Bar Chart configured as Column-Pin chart type (see Figure 4.146).
+You can observe that bottom layer is configured with Column-Pin chart
+type having the Primary Measure as Order Cost and Secondary Measure as
+Order Amount.
+
+Figure .: Column-Pin Chart Type
+
+Here you can also change the Primary and Secondary Measure shapes for
+the Column Pin chart type by navigating to the category Data and to the
+subcategory Data Series (see Figure 4.147).
+
+Figure .: Category Data – Shape Options
+
+For our second example, navigate to the category Appearance and to the
+subcategory Chart and set the property Set the Chart Type to the option
+Column-Deviation (see Figure 4.148).
+
+Figure .: Category Appearance
+
+Based on the above configuration, you will be able to view the Advanced
+Column Bar Chart configured as Column-Deviation chart type (see Figure
+4.149). You can observe that bottom layer is configured with
+Column-Deviation chart type. Here the secondary measure Order Amount is
+viewed as Column Bar Charts and the primary measure Order Cost will be
+represented as the positive deviation bar in green color that occurs
+inside the Column Bar Chart and the negative deviation bar in red color
+that occurs on the top of the Column Bar Chart. You can also configure
+with different chart types to view the Advanced Column Bar Chart.
+
+Figure .: Column-Deviation Chart Type
+
+Additional Properties of the Trend Charts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In section 4.5.5 we discussed the common set of Additional Properties
+for all charts. In this section we will outline the Additional
+Properties that are specific to the Trend and Comparison charts.
+
+Category Data 
+^^^^^^^^^^^^^^
+
+The category Data in the Additional Properties allows you to customize
+settings in regard to topics such as Data Labels, Error Bar, Markers,
+and other data relevant configurations.
+
++-----------------+-----------------+-----------------+-----------------+
+| Sub category    | Area            | Property        | Description     |
++=================+=================+=================+=================+
+| Data Series     | Marker          | Apply Marker    | This property   |
+|                 |                 | Customization   | allows you to   |
+|                 |                 |                 | enable /        |
+|                 |                 |                 | disable the     |
+|                 |                 |                 | Marker          |
+|                 |                 |                 | Customization   |
+|                 |                 |                 | for the Chart.  |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Marker Color    | This property   |
+|                 |                 | identical to    | sets the same   |
+|                 |                 | Data Series     | color to the    |
+|                 |                 |                 | Markers as the  |
+|                 |                 |                 | Data Series     |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Marker Symbol   | Enables you to  |
+|                 |                 |                 | choose a Marker |
+|                 |                 |                 | Symbol. The     |
+|                 |                 |                 | available types |
+|                 |                 |                 | of symbols are  |
+|                 |                 |                 | Circle,         |
+|                 |                 |                 | Diamond,        |
+|                 |                 |                 | Square,         |
+|                 |                 |                 | Triangle,       |
+|                 |                 |                 | Triangle Down   |
+|                 |                 |                 | and Custom      |
+|                 |                 |                 | Marker.         |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Marker Size     | Allows you to   |
+|                 |                 |                 | set a size for  |
+|                 |                 |                 | the marker.     |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Marker Color    | Allows you to   |
+|                 |                 |                 | choose a color  |
+|                 |                 |                 | for the marker. |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Show On Hover   | Allows you to   |
+|                 |                 |                 | enable the      |
+|                 |                 |                 | hover option on |
+|                 |                 |                 | the marker.     |
++-----------------+-----------------+-----------------+-----------------+
+|                 | Series Options  | Positive        | This property   |
+|                 |                 |                 | allows you to   |
+|                 |                 |                 | select the      |
+|                 |                 |                 | color for the   |
+|                 |                 |                 | data series     |
+|                 |                 |                 | which           |
+|                 |                 |                 | represents the  |
+|                 |                 |                 | positive        |
+|                 |                 |                 | variance value. |
+|                 |                 |                 | By default the  |
+|                 |                 |                 | color will be   |
+|                 |                 |                 | green. This     |
+|                 |                 |                 | property is     |
+|                 |                 |                 | applicable for  |
+|                 |                 |                 | Advanced Column |
+|                 |                 |                 | Bar Chart.      |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Negative        | This property   |
+|                 |                 |                 | allows you to   |
+|                 |                 |                 | select the      |
+|                 |                 |                 | color for the   |
+|                 |                 |                 | data series     |
+|                 |                 |                 | which           |
+|                 |                 |                 | represents the  |
+|                 |                 |                 | neagative       |
+|                 |                 |                 | variance value. |
+|                 |                 |                 | By default the  |
+|                 |                 |                 | color will be   |
+|                 |                 |                 | red. This       |
+|                 |                 |                 | property is     |
+|                 |                 |                 | applicable for  |
+|                 |                 |                 | Advanced Column |
+|                 |                 |                 | Bar Chart.      |
++-----------------+-----------------+-----------------+-----------------+
+|                 | Series Name     | ∆PY             | This property   |
+|                 | Change          |                 | allows you to   |
+|                 |                 |                 | change the      |
+|                 |                 |                 | Series Name for |
+|                 |                 |                 | the Variance    |
+|                 |                 |                 | value and it is |
+|                 |                 |                 | restricted to   |
+|                 |                 |                 | five letters.   |
+|                 |                 |                 | This property   |
+|                 |                 |                 | is applicable   |
+|                 |                 |                 | for Advanced    |
+|                 |                 |                 | Column Bar      |
+|                 |                 |                 | Chart.          |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | ∆PY%            | This property   |
+|                 |                 |                 | allows you to   |
+|                 |                 |                 | change the      |
+|                 |                 |                 | Series Name for |
+|                 |                 |                 | the Variance    |
+|                 |                 |                 | Percentage      |
+|                 |                 |                 | value and it is |
+|                 |                 |                 | restricted to   |
+|                 |                 |                 | five letters.   |
+|                 |                 |                 | This property   |
+|                 |                 |                 | is applicable   |
+|                 |                 |                 | for Advanced    |
+|                 |                 |                 | Column Bar      |
+|                 |                 |                 | Chart.          |
++-----------------+-----------------+-----------------+-----------------+
+|                 | Shape Options   | Deviation Shape | This property   |
+|                 |                 |                 | allows you to   |
+|                 |                 |                 | set the         |
+|                 |                 |                 | Deviation shape |
+|                 |                 |                 | on the top of   |
+|                 |                 |                 | the thin        |
+|                 |                 |                 | vertical bars   |
+|                 |                 |                 | in the top most |
+|                 |                 |                 | layer           |
+|                 |                 |                 | representing    |
+|                 |                 |                 | the Variance    |
+|                 |                 |                 | Percentage      |
+|                 |                 |                 | value. The      |
+|                 |                 |                 | options are     |
+|                 |                 |                 | Square, Circle  |
+|                 |                 |                 | and Diamond.    |
+|                 |                 |                 | This property   |
+|                 |                 |                 | is applicable   |
+|                 |                 |                 | for Advanced    |
+|                 |                 |                 | Column Bar      |
+|                 |                 |                 | Chart.          |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Deviation Shape | This property   |
+|                 |                 | Color           | allows you to   |
+|                 |                 |                 | set the color   |
+|                 |                 |                 | for the         |
+|                 |                 |                 | Deviation       |
+|                 |                 |                 | Shape. This     |
+|                 |                 |                 | property is     |
+|                 |                 |                 | applicable for  |
+|                 |                 |                 | Advanced Column |
+|                 |                 |                 | Bar Chart.      |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Primary Measure | This property   |
+|                 |                 | Shape           | allows you to   |
+|                 |                 |                 | set the shape   |
+|                 |                 |                 | for the Primary |
+|                 |                 |                 | Measure when    |
+|                 |                 |                 | the chart type  |
+|                 |                 |                 | is selected as  |
+|                 |                 |                 | Column-Pin or   |
+|                 |                 |                 | Bar-Pin. The    |
+|                 |                 |                 | options are     |
+|                 |                 |                 | Square, Circle  |
+|                 |                 |                 | and Diamond.    |
+|                 |                 |                 | This property   |
+|                 |                 |                 | is applicable   |
+|                 |                 |                 | for Advanced    |
+|                 |                 |                 | Column Bar      |
+|                 |                 |                 | Chart.          |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Secondary       | This property   |
+|                 |                 | Measure Shape   | allows you to   |
+|                 |                 |                 | set the shape   |
+|                 |                 |                 | for the         |
+|                 |                 |                 | Secondary       |
+|                 |                 |                 | Measure when    |
+|                 |                 |                 | the chart type  |
+|                 |                 |                 | is selected as  |
+|                 |                 |                 | Column-Pin or   |
+|                 |                 |                 | Bar-Pin. The    |
+|                 |                 |                 | options are     |
+|                 |                 |                 | Square, Circle  |
+|                 |                 |                 | and Diamond.    |
+|                 |                 |                 | This property   |
+|                 |                 |                 | is applicable   |
+|                 |                 |                 | for Advanced    |
+|                 |                 |                 | Column Bar      |
+|                 |                 |                 | Chart.          |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Number of       | This property   |
+|                 |                 | Decimals        | allows you to   |
+|                 |                 |                 | set the number  |
+|                 |                 |                 | of decimals for |
+|                 |                 |                 | the Varaiance   |
+|                 |                 |                 | Series. This    |
+|                 |                 |                 | property is     |
+|                 |                 |                 | applicable for  |
+|                 |                 |                 | Advanced Column |
+|                 |                 |                 | Bar Chart.      |
++-----------------+-----------------+-----------------+-----------------+
+| Drill Down      | General         | Show all        | You can use     |
+|                 | Settings        | Measures        | this property   |
+|                 |                 |                 | to enable /     |
+|                 |                 |                 | disable the     |
+|                 |                 |                 | showing of all  |
+|                 |                 |                 | measures in a   |
+|                 |                 |                 | Drilldown. In   |
+|                 |                 |                 | case this       |
+|                 |                 |                 | option is       |
+|                 |                 |                 | disabled, then  |
+|                 |                 |                 | the drill down  |
+|                 |                 |                 | will only show  |
+|                 |                 |                 | the measure     |
+|                 |                 |                 | that was        |
+|                 |                 |                 | clicked.        |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Show Totals     | This property   |
+|                 |                 |                 | allows you to   |
+|                 |                 |                 | show / hide     |
+|                 |                 |                 | totals for the  |
+|                 |                 |                 | chart itself.   |
+|                 |                 |                 | The totals will |
+|                 |                 |                 | only be shown   |
+|                 |                 |                 | on the first    |
+|                 |                 |                 | view of the     |
+|                 |                 |                 | charts, but     |
+|                 |                 |                 | will not be     |
+|                 |                 |                 | shown on the    |
+|                 |                 |                 | next drill down |
+|                 |                 |                 | levels.         |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Total Node      | This property   |
+|                 |                 | Placement       | allows you to   |
+|                 |                 |                 | decide if the   |
+|                 |                 |                 | Total node      |
+|                 |                 |                 | should be       |
+|                 |                 |                 | placed before   |
+|                 |                 |                 | or after the    |
+|                 |                 |                 | members of the  |
+|                 |                 |                 | drill down.     |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Show Parent     | In case this    |
+|                 |                 | Nodes on        | property is     |
+|                 |                 | Drilldown       | activated, then |
+|                 |                 |                 | the parent node |
+|                 |                 |                 | will be         |
+|                 |                 |                 | included in the |
+|                 |                 |                 | Drill Down      |
+|                 |                 |                 | chart in        |
+|                 |                 |                 | addition to the |
+|                 |                 |                 | members from    |
+|                 |                 |                 | the next level. |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Parent Node     | This property   |
+|                 |                 | Placement       | allows you to   |
+|                 |                 |                 | decide if the   |
+|                 |                 |                 | parent node     |
+|                 |                 |                 | totals should   |
+|                 |                 |                 | be placed       |
+|                 |                 |                 | before or after |
+|                 |                 |                 | the members of  |
+|                 |                 |                 | the drill down. |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Enable Scroll   | This option     |
+|                 |                 | Bar             | allows you to   |
+|                 |                 |                 | enable /        |
+|                 |                 |                 | disable the     |
+|                 |                 |                 | scroll bar.     |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Scrollable      | Sets the        |
+|                 |                 | Chart           | Width/Height of |
+|                 |                 | Width/Height    | the Chart       |
+|                 |                 |                 | greater than    |
+|                 |                 |                 | the Container   |
+|                 |                 |                 | Width/Height.   |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | On Click        | Using the On    |
+|                 |                 |                 | Click property  |
+|                 |                 |                 | you can specify |
+|                 |                 |                 | which           |
+|                 |                 |                 | functionality   |
+|                 |                 |                 | should be used  |
+|                 |                 |                 | when you click  |
+|                 |                 |                 | on an element   |
+|                 |                 |                 | of the data     |
+|                 |                 |                 | series in the   |
+|                 |                 |                 | chart. The      |
+|                 |                 |                 | available       |
+|                 |                 |                 | options are:    |
+|                 |                 |                 | Drilldown,      |
+|                 |                 |                 | Expand /        |
+|                 |                 |                 | Collapse,       |
+|                 |                 |                 | Select, None.   |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | On Double Click | Using the On    |
+|                 |                 |                 | Double-Click    |
+|                 |                 |                 | property you    |
+|                 |                 |                 | can specify     |
+|                 |                 |                 | which           |
+|                 |                 |                 | functionality   |
+|                 |                 |                 | should be used  |
+|                 |                 |                 | when you        |
+|                 |                 |                 | double-click on |
+|                 |                 |                 | an element of   |
+|                 |                 |                 | the data series |
+|                 |                 |                 | in the chart.   |
+|                 |                 |                 | The available   |
+|                 |                 |                 | options are:    |
+|                 |                 |                 | Drilldown,      |
+|                 |                 |                 | Expand /        |
+|                 |                 |                 | Collapse,       |
+|                 |                 |                 | Select, None.   |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | On CTRL         | Using the On    |
+|                 |                 |                 | CTRL-Click      |
+|                 |                 |                 | property you    |
+|                 |                 |                 | can specify     |
+|                 |                 |                 | which           |
+|                 |                 |                 | functionality   |
+|                 |                 |                 | should be used  |
+|                 |                 |                 | when you press  |
+|                 |                 |                 | the CTRL Key    |
+|                 |                 |                 | and clicks on   |
+|                 |                 |                 | an element of   |
+|                 |                 |                 | the data series |
+|                 |                 |                 | in the chart.   |
+|                 |                 |                 | The available   |
+|                 |                 |                 | options are:    |
+|                 |                 |                 | Drilldown,      |
+|                 |                 |                 | Expand /        |
+|                 |                 |                 | Collapse,       |
+|                 |                 |                 | Select, None.   |
++-----------------+-----------------+-----------------+-----------------+
+|                 | Hierarchy Drill | Enable          | This option     |
+|                 | Down            | Hierarchy Drill | allows you to   |
+|                 |                 | Down            | enable /        |
+|                 |                 |                 | disable a Drill |
+|                 |                 |                 | Down based on   |
+|                 |                 |                 | an active       |
+|                 |                 |                 | hierarchy in    |
+|                 |                 |                 | the data        |
+|                 |                 |                 | source.         |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Include Root    | Using this      |
+|                 |                 | Level Nodes     | property you    |
+|                 |                 |                 | can include or  |
+|                 |                 |                 | exclude the     |
+|                 |                 |                 | root level      |
+|                 |                 |                 | nodes of an     |
+|                 |                 |                 | active          |
+|                 |                 |                 | hierarchy into  |
+|                 |                 |                 | the Drill Down  |
+|                 |                 |                 | chart. This     |
+|                 |                 |                 | option only     |
+|                 |                 |                 | impacts Drill   |
+|                 |                 |                 | Down charts     |
+|                 |                 |                 | using a         |
+|                 |                 |                 | hierarchy.      |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Max. no. of     | Using this      |
+|                 |                 | Hierarchy       | option you can  |
+|                 |                 | Levels          | define a        |
+|                 |                 |                 | maximum for a   |
+|                 |                 |                 | Drilldown chart |
+|                 |                 |                 | using           |
+|                 |                 |                 | hierarchies. By |
+|                 |                 |                 | specifying the  |
+|                 |                 |                 | maximum number  |
+|                 |                 |                 | of hierarchy    |
+|                 |                 |                 | levels you can  |
+|                 |                 |                 | limit the data  |
+|                 |                 |                 | volume, which   |
+|                 |                 |                 | you will be     |
+|                 |                 |                 | able to         |
+|                 |                 |                 | retrieve using  |
+|                 |                 |                 | the drilldown   |
+|                 |                 |                 | chart.          |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Activate        | Using this      |
+|                 |                 | Hierarchical    | property you    |
+|                 |                 | Labeling        | can activate a  |
+|                 |                 |                 | specific        |
+|                 |                 |                 | labeling which  |
+|                 |                 |                 | will visualize  |
+|                 |                 |                 | the             |
+|                 |                 |                 | hierarchical    |
+|                 |                 |                 | nature of the   |
+|                 |                 |                 | data and keep   |
+|                 |                 |                 | the labels on   |
+|                 |                 |                 | the X-Axis (for |
+|                 |                 |                 | example with a  |
+|                 |                 |                 | column chart)   |
+|                 |                 |                 | grouped         |
+|                 |                 |                 | together based  |
+|                 |                 |                 | on the drill    |
+|                 |                 |                 | down.           |
++-----------------+-----------------+-----------------+-----------------+
+
+Table 4.12: Data
+
+Category Appearance
+^^^^^^^^^^^^^^^^^^^
+
++-----------------+-----------------+-----------------+-----------------+
+| Sub category    | Area            | Property        | Description     |
++=================+=================+=================+=================+
+| Chart           | General         | Set the Chart   | This property   |
+|                 | Settings        | Type            | allows you to   |
+|                 |                 |                 | set the Chart   |
+|                 |                 |                 | Type for the    |
+|                 |                 |                 | Advanced Column |
+|                 |                 |                 | Bar Chart. The  |
+|                 |                 |                 | options are     |
+|                 |                 |                 | Column,         |
+|                 |                 |                 | Column-Pin,     |
+|                 |                 |                 | Column-Stacked, |
+|                 |                 |                 | Column-Deviatio |
+|                 |                 |                 | n,              |
+|                 |                 |                 | Bar, Bar-Pin,   |
+|                 |                 |                 | Bar-Stacked,    |
+|                 |                 |                 | Bar-Deviation   |
+|                 |                 |                 | and Line. This  |
+|                 |                 |                 | property is     |
+|                 |                 |                 | applicable for  |
+|                 |                 |                 | Advanced Column |
+|                 |                 |                 | Bar Chart.      |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Enable Pareto   | This property   |
+|                 |                 | Series          | sets the Pareto |
+|                 |                 |                 | Series in the   |
+|                 |                 |                 | Column Bar      |
+|                 |                 |                 | Chart to        |
+|                 |                 |                 | display both    |
+|                 |                 |                 | Column bars and |
+|                 |                 |                 | a Line where    |
+|                 |                 |                 | individual      |
+|                 |                 |                 | values are      |
+|                 |                 |                 | represented in  |
+|                 |                 |                 | descending      |
+|                 |                 |                 | order by column |
+|                 |                 |                 | bars, and the   |
+|                 |                 |                 | cumulative      |
+|                 |                 |                 | total is        |
+|                 |                 |                 | represented by  |
+|                 |                 |                 | the line.       |
++-----------------+-----------------+-----------------+-----------------+
+|                 | Drill Down      | Drill Down Data | This property   |
+|                 |                 | Label Cursor    | sets the type   |
+|                 |                 |                 | of the cursor.  |
+|                 |                 |                 | The options are |
+|                 |                 |                 | Default,        |
+|                 |                 |                 | Pointer,        |
+|                 |                 |                 | Crosshair and   |
+|                 |                 |                 | Cell.           |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Drill Down      | This property   |
+|                 |                 | Button          | allows to       |
+|                 |                 | Horizontal      | configure the   |
+|                 |                 | Alignment       | horizontal      |
+|                 |                 |                 | alignment of    |
+|                 |                 |                 | the Drilldown   |
+|                 |                 |                 | button.         |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Drill Down      | This property   |
+|                 |                 | Button Vertical | allows to       |
+|                 |                 | Alignment       | configure the   |
+|                 |                 |                 | vertical        |
+|                 |                 |                 | alignment of    |
+|                 |                 |                 | the Drilldown   |
+|                 |                 |                 | button.         |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Drilldown       | This property   |
+|                 |                 | button          | allows to       |
+|                 |                 | Horizontal      | specify the     |
+|                 |                 | Offset          | Horizontal      |
+|                 |                 |                 | Offset of the   |
+|                 |                 |                 | Drilldown       |
+|                 |                 |                 | button relative |
+|                 |                 |                 | to its default  |
+|                 |                 |                 | alignment.      |
++-----------------+-----------------+-----------------+-----------------+
+|                 |                 | Drilldown       | This property   |
+|                 |                 | button Vertical | allows to       |
+|                 |                 | Offset          | specify the     |
+|                 |                 |                 | Vertical Offset |
+|                 |                 |                 | of the          |
+|                 |                 |                 | Drilldown       |
+|                 |                 |                 | button relative |
+|                 |                 |                 | to its default  |
+|                 |                 |                 | alignment.      |
++-----------------+-----------------+-----------------+-----------------+
+
+Table 4.13: Appearance
+
+Scripting in Trend and Comparison Charts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to the common scripting functions listed in section 4.6, the
+Trend charts support the following scripting functions.
+
++-----------------------------------+-----------------------------------+
+| Function / Method                 | Description                       |
++===================================+===================================+
+| DSXGetchartWidth()                | The function allows you to        |
+|                                   | retrieve the value for the width  |
+|                                   | of the Column Bar Drill Down      |
+|                                   | Chart.                            |
++-----------------------------------+-----------------------------------+
+| DSXSetchartWidth()                | The function allows you to set    |
+|                                   | the value for the width of the    |
+|                                   | Column Bar Drill Down Chart.      |
++-----------------------------------+-----------------------------------+
+
+Table 4.14: Scripting Functions
+
+ 
+-
